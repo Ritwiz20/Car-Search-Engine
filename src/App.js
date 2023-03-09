@@ -11,19 +11,13 @@ function App() {
 
   const getResult = (e) => {
     e.preventDefault();
-  
+
     const requestBody = {
       question: query,
     };
-  
+
     axios
-      .post(url, requestBody, {
-        headers: {
-          'Content-Type': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
-        },
-      })
+      .post(url, requestBody)
       .then((res) => {
         setSearchResults(res.data);
         console.log(res.data);
@@ -31,15 +25,17 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-  
+
     setQuery({});
   };
-  
+
 
   const handleClick = async (e) => {
     e.preventDefault();
     getResult(e);
   };
+
+  
   return (
     <>
       <div className="relative h-screen">
@@ -52,7 +48,6 @@ function App() {
           <div className="absolute top-[40%] md:top-[35%] lg:top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10 w-[95%] lg:w-[80%]">
             <div className="w-full mt-5 p-2 text-center">
               <h1 className="text-center text-xl md:text-3xl font-bold text-white sm:text-4xl">
-                {/* Phenx Car Search Solutions */}
                 Phenx Car Explorer
               </h1>
             </div>
@@ -83,9 +78,6 @@ function App() {
               <div className=" bg-white w-[90%] mx-auto md:w-full bg-opacity-30 backdrop-filter backdrop-blur-md p-4 mt-10 rounded-2xl z-10">
                 <p className="text-white text-sm md:text-xl font-normal">
                   {searchResults}
-                  {/* Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Mollitia, dicta, ad corporis tenetur necessitatibus fuga sed
-                  repellendus  */}
                 </p>
               </div>
             )}
@@ -97,3 +89,4 @@ function App() {
 }
 
 export default App;
+
