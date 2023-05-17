@@ -2,7 +2,7 @@
 
 ## 1. Clone the GitHub repository to your local machine:
 
-git clone https://github.com/Ritwiz20/SearchEngine.git
+git clone https://github.com/Ritwiz20/Car-Search-Engine.git
 
 ## 2. Navigate to the project directory:
 
